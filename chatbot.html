@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-bar">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i> Document Generator
+                </a>
+                <a href="chatbot.html" class="nav-link active">
+                    <i class="fas fa-comments"></i> Legal Chatbot
+                </a>
+                <a href="training.html" class="nav-link">
+                    <i class="fas fa-brain"></i> Model Training
+                </a>
+            </nav>
+            <h1><i class="fas fa-comments"></i> Legal Chatbot</h1>
+            <p class="subtitle">Get instant answers to your legal questions</p>
+        </header>
+
+        <div class="chat-interface">
+            <div class="chat-sidebar">
+                <div class="suggested-topics">
+                    <h3>Suggested Topics</h3>
+                    <button class="topic-btn" data-topic="employment">
+                        <i class="fas fa-briefcase"></i> Employment Law
+                    </button>
+                    <button class="topic-btn" data-topic="property">
+                        <i class="fas fa-home"></i> Property Law
+                    </button>
+                    <button class="topic-btn" data-topic="family">
+                        <i class="fas fa-users"></i> Family Law
+                    </button>
+                    <button class="topic-btn" data-topic="criminal">
+                        <i class="fas fa-gavel"></i> Criminal Law
+                    </button>
+                </div>
+                <div class="chat-history">
+                    <h3>Recent Chats</h3>
+                    <div id="chatHistoryList"></div>
+                </div>
+            </div>
+
+            <div class="chat-main">
+                <div class="chat-header">
+                    <div class="chat-status">
+                        <span class="status-dot"></span>
+                        Online
+                    </div>
+                    <div class="chat-actions">
+                        <button id="clearChat" class="action-btn">
+                            <i class="fas fa-trash"></i> Clear Chat
+                        </button>
+                        <button id="exportChat" class="action-btn">
+                            <i class="fas fa-download"></i> Export Chat
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot welcome-message">
+                        <div class="message-content">
+                            <i class="fas fa-balance-scale bot-icon"></i>
+                            <div class="text-content">
+                                <p>Hello! I'm your AI Legal Assistant. How can I help you today?</p>
+                                <div class="quick-replies">
+                                    <button class="quick-reply-btn">Employment Rights</button>
+                                    <button class="quick-reply-btn">Property Disputes</button>
+                                    <button class="quick-reply-btn">Family Law</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="chatInput" 
+                            placeholder="Type your legal question..."
+                            rows="1"
+                        ></textarea>
+                        <div class="input-actions">
+                            <button id="attachFile" class="input-action-btn">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button id="sendMessage" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="typing-indicator hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="chatbot.js"></script>
+</body>
+</html> 

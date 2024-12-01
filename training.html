@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Model Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-bar">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i> Document Generator
+                </a>
+                <a href="chatbot.html" class="nav-link">
+                    <i class="fas fa-comments"></i> Legal Chatbot
+                </a>
+                <a href="training.html" class="nav-link active">
+                    <i class="fas fa-brain"></i> Model Training
+                </a>
+            </nav>
+            <h1><i class="fas fa-brain"></i> Legal AI Model Training</h1>
+            <p class="subtitle">Train the AI model with Indian legal documents</p>
+        </header>
+
+        <div class="card">
+            <h2><i class="fas fa-upload"></i> Upload Training Data</h2>
+            
+            <div class="training-section">
+                <div class="select-wrapper">
+                    <i class="fas fa-book-law icon"></i>
+                    <select id="trainingCategory" class="document-select">
+                        <option value="employment">Employment Laws</option>
+                        <option value="contract">Contract Laws</option>
+                        <option value="corporate">Corporate Laws</option>
+                        <option value="property">Property Laws</option>
+                    </select>
+                </div>
+
+                <div class="file-upload-section">
+                    <div class="upload-container">
+                        <i class="fas fa-file-upload icon"></i>
+                        <input type="file" id="trainingFiles" multiple 
+                               accept=".pdf,.doc,.docx" 
+                               class="file-input" />
+                        <label for="trainingFiles" class="file-label">
+                            Drop PDF or Word files here or click to upload
+                        </label>
+                    </div>
+                    <div id="fileList" class="file-list"></div>
+                </div>
+
+                <div class="training-input-container">
+                    <div class="textarea-wrapper">
+                        <i class="fas fa-paragraph icon"></i>
+                        <textarea 
+                            id="lawContent" 
+                            placeholder="Enter legal content, precedents, or rules..."
+                            rows="6"
+                        ></textarea>
+                    </div>
+
+                    <div class="textarea-wrapper">
+                        <i class="fas fa-check-circle icon"></i>
+                        <textarea 
+                            id="expectedOutput" 
+                            placeholder="Enter expected document output format..."
+                            rows="6"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <button id="submitTrainingBtn" class="generate-btn">
+                    <i class="fas fa-upload"></i> Submit Training Data
+                </button>
+
+                <div class="training-status">
+                    <div id="trainingStats" class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Samples:</span>
+                            <span class="stat-value" id="totalSamples">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Category Coverage:</span>
+                            <span class="stat-value" id="categoryCoverage">0%</span>
+                        </div>
+                    </div>
+                    <div id="trainingMessage" class="message hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="training.js"></script>
+</body>
+</html> 

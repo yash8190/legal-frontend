@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-bar">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-file-contract"></i> Document Generator
+                </a>
+                <a href="chatbot.html" class="nav-link">
+                    <i class="fas fa-comments"></i> Legal Chatbot
+                </a>
+                <a href="training.html" class="nav-link">
+                    <i class="fas fa-brain"></i> Model Training
+                </a>
+            </nav>
+            <h1><i class="fas fa-file-contract"></i> Legal Document Generator</h1>
+            <p class="subtitle">Generate professional legal documents in seconds</p>
+        </header>
+
+        <div class="card">
+            <div class="input-section">
+                <div class="select-wrapper">
+                    <i class="fas fa-file-signature icon"></i>
+                    <select id="documentType" class="document-select">
+                        <option value="employment">Employment Agreement</option>
+                        <option value="nda">Non-Disclosure Agreement</option>
+                        <option value="contract">Contract Agreement</option>
+                    </select>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <i class="fas fa-pen-fancy icon"></i>
+                    <textarea 
+                        id="promptInput" 
+                        placeholder="Enter document details (e.g., for employment agreement: job title, salary, start date, responsibilities, etc.)"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <button id="generateBtn" class="generate-btn">
+                    <i class="fas fa-magic"></i> Generate Document
+                </button>
+            </div>
+
+            <div class="answer-container">
+                <div class="answer-header">
+                    <h3><i class="fas fa-file-alt"></i> Generated Document</h3>
+                    <div class="action-buttons">
+                        <button id="copyBtn" class="action-btn">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button id="downloadBtn" class="action-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div id="answer" class="answer"></div>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Generating your document...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
